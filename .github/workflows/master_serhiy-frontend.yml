@@ -29,6 +29,7 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
+          cd serhiy
           ls
           zip release.zip serhiy/dist/*
 
