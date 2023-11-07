@@ -31,7 +31,7 @@ jobs:
         run: |
           cd serhiy
           ls
-          zip release.zip serhiy/dist/*
+          zip release.zip dist/*
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
