@@ -29,9 +29,9 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          cd serhiy
+          cd serhiy/dist
           ls
-          zip release.zip dist/*
+          zip release.zip ./*
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
