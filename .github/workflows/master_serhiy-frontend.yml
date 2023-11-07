@@ -23,7 +23,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd $GITHUB_WORKSPACE/serhiy
+          cd $GITHUB_WORKSPACE/serhiy/dist
           npm install
           npm run build
 
