@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>I'm the best!</h2>
+    <p>Deployed automatically.. GG EZ!</p>
   </div>
 </template>
 
