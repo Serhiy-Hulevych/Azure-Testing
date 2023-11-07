@@ -28,7 +28,7 @@ jobs:
           npm run build
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip serhiy/dist/* .
+        run: cd $GITHUB_WORKSPACE/serhiy/dist && zip -r $GITHUB_WORKSPACE/serhiy/release.zip 
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
