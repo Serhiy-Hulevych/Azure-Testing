@@ -20,12 +20,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      
-      - name: List Workspace Contents
-        run: ls $GITHUB_WORKSPACE
 
       - name: npm install, build, and test
         run: |
+          cd $GITHUB_WORKSPACE/serhiy
           npm install
           npm run build --if-present
           npm run test --if-present
