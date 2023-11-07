@@ -28,7 +28,7 @@ jobs:
           npm run build
 
       - name: Zip artifact for deployment
-        run: zip release.zip serhiy/dist/*
+        run: cd serhiy/dist && zip release.zip
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -50,7 +50,7 @@ jobs:
           name: node-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip "in/release/serhiy/dist/*"
+        run: unzip release.zip
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
