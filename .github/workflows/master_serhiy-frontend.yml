@@ -24,7 +24,7 @@ jobs:
         
       - name: List Directory Contents
         run: |
-          ls /portfolio/serhiy
+          ls
         working-directory: /
 
       - name: npm install, build, and test
