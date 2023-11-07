@@ -3,6 +3,8 @@
 
 name: Build and deploy Node.js app to Azure Web App - serhiy-frontend
 
+projectRoot: $(System.DefaultWorkingDirectory)
+
 on:
   push:
     branches:
@@ -20,12 +22,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-
-        
+      
       - name: List Directory Contents
         run: |
-          ls
-        working-directory: "/serhiy"
+          ls /
 
       - name: npm install, build, and test
         run: |
