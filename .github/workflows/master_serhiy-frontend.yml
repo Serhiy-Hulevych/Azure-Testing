@@ -26,6 +26,7 @@ jobs:
           cd $GITHUB_WORKSPACE/serhiy
           npm install
           npm run build
+          pm2 serve /home/site/wwwroot --no-daemon --spa
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -50,9 +51,7 @@ jobs:
           name: node-app
 
       - name: Unzip artifact for deployment
-        run: |
-        unzip release.zip
-        pm2 serve /home/site/wwwroot --no-daemon --spa
+        run: unzip release.zip
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
