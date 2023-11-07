@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
+          workingDirectory: '$(build.sourcesdirectory)/serhiy'
 
       - name: npm install, build, and test
         run: |
@@ -35,7 +36,6 @@ jobs:
         with:
           name: node-app
           path: release.zip
-          package: "/serhiy"
 
   deploy:
     runs-on: ubuntu-latest
