@@ -61,4 +61,4 @@ jobs:
           app-name: 'serhiy-frontend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E014938462CB4C2B9EE92CCF81CE1562 }}
-          package: "./LearningFE"
+          package: $(Pipeline.Workspace)/LearningFE
