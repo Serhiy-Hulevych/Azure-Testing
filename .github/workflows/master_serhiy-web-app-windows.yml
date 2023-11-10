@@ -57,7 +57,6 @@ jobs:
           Expand-Archive -Path release.zip -DestinationPath release
       
       - name: Deploy to Azure Web App
-        run: ls
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
