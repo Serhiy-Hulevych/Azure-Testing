@@ -54,8 +54,8 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: |
+          Expand-Archive -Path release.zip
           ls
-          Expand-Archive -Path release.zip -DestinationPath /teste
       
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
