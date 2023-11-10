@@ -31,13 +31,13 @@ jobs:
           npm run build
 
       - name: Zip artifact for deployment
-        run: Compress-Archive -Path serhiy/dist -DestinationPath release.zip -Force
+        run: Compress-Archive -Path serhiy/dist -DestinationPath teste/release.zip -Force
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: release.zip
+          path: teste/release.zip
 
   deploy:
     runs-on: windows-latest
@@ -53,7 +53,7 @@ jobs:
           name: node-app
 
       - name: Unzip artifact for deployment
-        run: Expand-Archive -Path release.zip -DestinationPath /teste
+        run: Expand-Archive -Path release.zip
       
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'serhiy-web-app-windows'
           slot-name: 'Production'
-          package: ./teste
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7E6579AE8B524627AAF0D5A91B2F0797 }}
