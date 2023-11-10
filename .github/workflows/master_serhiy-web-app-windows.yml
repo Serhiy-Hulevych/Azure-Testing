@@ -3,10 +3,6 @@
 
 name: Windows Web App
 
-defaults:
-  run:
-    working-directory: ./teste
-
 on:
   push:
     branches:
@@ -61,6 +57,7 @@ jobs:
           Expand-Archive -Path release.zip -DestinationPath release
       
       - name: Deploy to Azure Web App
+        working-directory: ./teste
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
