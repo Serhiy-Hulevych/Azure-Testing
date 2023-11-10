@@ -31,9 +31,7 @@ jobs:
           npm run build
 
       - name: Zip artifact for deployment
-        run: |
-          cd serhiy/dist
-          Compress-Archive -Path serhiy/dist -DestinationPath release.zip -Force
+        run: Compress-Archive -Path serhiy/dist -DestinationPath release.zip -Force
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
