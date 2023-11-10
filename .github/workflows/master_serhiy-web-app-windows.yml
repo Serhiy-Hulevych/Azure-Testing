@@ -57,12 +57,10 @@ jobs:
           Expand-Archive -Path release.zip -DestinationPath release
       
       - name: Deploy to Azure Web App
-        working-directory: ./teste
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          working-directory: ./teste
           app-name: 'serhiy-web-app-windows'
           slot-name: 'Production'
-          package: ./release/dist
+          package: ./release
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7E6579AE8B524627AAF0D5A91B2F0797 }}
