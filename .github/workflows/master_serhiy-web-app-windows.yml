@@ -60,6 +60,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
+          working-directory: ./teste
           app-name: 'serhiy-web-app-windows'
           slot-name: 'Production'
           package: ./release/dist
