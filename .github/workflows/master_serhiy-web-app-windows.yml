@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'serhiy-web-app-windows'
           slot-name: 'Production'
-          package: .
+          package: ./teste
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7E6579AE8B524627AAF0D5A91B2F0797 }}
