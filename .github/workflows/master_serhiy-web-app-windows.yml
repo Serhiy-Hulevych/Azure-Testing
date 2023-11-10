@@ -7,7 +7,10 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - master
 
 jobs:
   build:
@@ -23,7 +26,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd $GITHUB_WORKSPACE/serhiy
+          cd $GITHUB_WORKSPACE\serhiy
           npm install
           npm run build
 
