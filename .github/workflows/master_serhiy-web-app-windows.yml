@@ -26,7 +26,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd $GITHUB_WORKSPACE\serhiy
+          ls
           npm install
           npm run build
 
