@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>I'm the best!</h2>
-    <p>Deployed automatically.. GG EZ!</p>
+    <p>First Deployed automatically.. GG EZ!</p>
+    <p>Azure access token: {{ this.$store.state.token }}</p>
   </div>
 </template>
 

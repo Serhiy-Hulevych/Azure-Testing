@@ -5,5 +5,15 @@ module.exports = defineConfig({
     host: "localhost",
     port: "8080"
   },
-  publicPath: '/LearningFE'
+  publicPath: '/First'
 })
+
+/*
+https: {
+      key: fs.readFileSync('./src/security/cert.key'),
+      cert: fs.readFileSync('./src/security/cert.pem'),
+      //ca: fs.readFileSync('./certs/my-ca.crt')
+      requestCert: false,
+      rejectUnauthorized: false
+    },
+    */

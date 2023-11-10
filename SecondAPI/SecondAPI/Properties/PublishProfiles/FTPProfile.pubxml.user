@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgRApUNFTUECeHNwVYdL/GgAAAAACAAAAAAADZgAAwAAAABAAAABY+9tm+pPHeAeufqAd5UviAAAAAASAAACgAAAAEAAAAKakRq3mmN2AUrtIudcIjHuAAAAA+M5tFwFsXipYGE7x8ztP7GTprl938o4tK6dtMoHyG72jfQ33sLTPogAGii7ald+iCKWR0V70vDF6LKkI/KlYzHr6O0dNnI3ubcsIS5oJMrnUEGxPR2g6w9IvFCyBDLM/4RPqE1TQ1YAw3OKmGASSGMYaFEEU9oXspl98S2LWFSMUAAAATOExYRUQzlzdKcy95lyoLi5Cq7A=</EncryptedPassword>
+    <_PublishTargetUrl>ftps://waws-prod-am2-545.ftp.azurewebsites.windows.net/ftps://waws-prod-am2-545.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
+    <History>False|2023-11-10T11:10:55.3752860Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

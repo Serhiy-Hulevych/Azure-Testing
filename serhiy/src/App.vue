@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/frog.png">
   <HelloWorld msg="Serhiy Hulevych" />
+  <router-view />
 </template>
 
 <script>
