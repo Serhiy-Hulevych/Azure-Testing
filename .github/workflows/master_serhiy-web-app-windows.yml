@@ -31,7 +31,7 @@ jobs:
           npm run build
 
       - name: Zip artifact for deployment
-        run: Compress-Archive -Path serhiy/dist -DestinationPath release.zip -Force
+        run: Compress-Archive -Path serhiy/dist/* -DestinationPath release.zip -Force
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -54,7 +54,7 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: |
-          Expand-Archive -Path release.zip -DestinationPath release
+          Expand-Archive -Path release.zip -DestinationPath release/Folder1/Folder2
       
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
