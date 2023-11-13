@@ -68,7 +68,7 @@ jobs:
         run: |
           Expand-Archive -Path release.zip -DestinationPath release/LearningFE/DeployedFE
       
-      - name: Deploy to Azure Web App
+      - name: Deploy Frontend to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
