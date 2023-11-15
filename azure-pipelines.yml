@@ -15,7 +15,10 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
-
+- script: |
+    MODIFIED_FILES=$(git diff HEAD HEAD~ --name-only)
+    echo $MODIFIED_FILES
+  displayName: 'Modified File'
 
 - script: |
     previousCommit=$(git log -n 2 --format="%H" | sed -n '1p')
