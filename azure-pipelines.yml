@@ -15,43 +15,14 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
-- powershell: |
-    $changes = Invoke-RestMethod -Method Get -Headers $headers "https://dev.azure.com/$organization/$project/_apis/build/builds/$buildId/changes?api-version=5.1" -verbose
-    $changedPaths = @()
-    if ($changes.count -gt 0) {
-        $commitId = $changes.value[$changes.value.length - 1].id
-        write-verbose "first change: $commitId" -Verbose
-
-        $commitId = $changes.value[$changes.value.length - 1].id
-        $head = $changes.value[0].id
-        
-        $changedPaths = git diff "$($commitId)~1" $head --name-only
-    }
-    echo "Total changed $changes"
-
 - script: |
-    lastCommit=$(git log -n 2 --format="%H" | tail -n 1)
-    files=$(git diff-tree --no-commit-id --name-only -r $(Build.SourceVersion))
-    echo "Teste: $lastCommit"
-    echo "Teste2: $files"
-  displayName: 'Set Previous Commit'
-
-- script: |
-    echo "Previous Commit: $(previousCommit)"
-  displayName: 'Debug Previous Commit'
-
-- script: |
-    git log --oneline
-  displayName: 'Print Git Log'
-
-- script: |
-    changes=$(git diff $(previousCommit)..HEAD)
-    echo "Changes: $changes"
-    echo "##vso[task.setvariable variable=folderChanges]$changes"
-  displayName: 'Check for Changes in serhiy Folder'
+    cd serhiy
+    npm install
+    npm run build
+  displayName: 'npm install and build'
 
 - task: PublishBuildArtifacts@1
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), ne(variables['folderChanges'], ''), contains(variables['folderChanges'], '/'))
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
     PathtoPublish: 'serhiy/dist'
     ArtifactName: 'frontend'
