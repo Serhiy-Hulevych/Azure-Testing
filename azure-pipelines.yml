@@ -26,7 +26,7 @@ steps:
   displayName: 'Set Previous Commit'
 
 - script: |
-    changes=$(git diff --name-only $(variables['previousCommit'])..HEAD)
+    changes=$(git diff --name-only $(previousCommit)..HEAD)
     echo "Changes: $changes"
     echo "##vso[task.setvariable variable=folderChanges]$changes"
   displayName: 'Check for Changes in serhiy Folder'
