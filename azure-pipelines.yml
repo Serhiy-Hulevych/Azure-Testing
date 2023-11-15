@@ -16,11 +16,11 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    previousCommit=git diff HEAD~1 HEAD
-    echo Teste: $(Build.SourceVersion)
-    echo Teste1: $(Build.SourceVersion)^
+    previousCommit=$(git diff-tree --no-commit-id --name-only -r $(Build.SourceVersion)^..$(Build.SourceVersion))
+    echo "Teste: $(Build.SourceVersion)"
+    echo "Teste1: $(Build.SourceVersion)^"
     echo "##vso[task.setvariable variable=previousCommit]$previousCommit"
-    echo Teste2: $(previousCommit)
+    echo "Teste2: $previousCommit"
   displayName: 'Set Previous Commit'
 
 - script: |
