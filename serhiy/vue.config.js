@@ -5,7 +5,7 @@ module.exports = defineConfig({
     host: "localhost",
     port: "8080"
   },
-  publicPath: '/First'
+  publicPath: '/Third'
 })
 
 /*
