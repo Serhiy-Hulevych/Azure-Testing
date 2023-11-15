@@ -16,11 +16,14 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    previousCommit=$(git diff-tree --no-commit-id --name-only -r $(Build.SourceVersion)^..$(Build.SourceVersion))
-    echo "Teste: $(Build.SourceVersion)"
-    echo "Teste1: $(Build.SourceVersion)^"
-    echo "##vso[task.setvariable variable=previousCommit]$previousCommit"
-    echo "Teste2: $previousCommit"
+    currentCommit=$(git rev-parse HEAD)
+    previousCommit=$(git rev-parse HEAD^)
+    files=$(git diff-tree --no-commit-id --name-only -r $previousCommit..$currentCommit)
+    echo "Teste: $currentCommit"
+    echo "Teste1: $previousCommit"
+    echo "Changed Files: $files"
+    echo "##vso[task.setvariable variable=previousCommit]$files"
+    echo "Teste2: $files"
   displayName: 'Set Previous Commit'
 
 - script: |
