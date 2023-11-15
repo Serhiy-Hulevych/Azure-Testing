@@ -19,8 +19,8 @@ steps:
     previousCommit=git diff HEAD~1 HEAD
     echo Teste: $(Build.SourceVersion)
     echo Teste1: $(Build.SourceVersion)^
-    echo Teste2: $(previousCommit)
     echo "##vso[task.setvariable variable=previousCommit]$previousCommit"
+    echo Teste2: $(previousCommit)
   displayName: 'Set Previous Commit'
 
 - script: |
