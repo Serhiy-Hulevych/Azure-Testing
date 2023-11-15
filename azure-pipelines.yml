@@ -16,8 +16,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    MODIFIED_FILES=$(git diff HEAD HEAD~ --name-only)
-    echo $MODIFIED_FILES
+    changedFiles=$(git diff --name-only $currentCommit^..$currentCommit)
+    echo "Changed Files: $changedFiles"
   displayName: 'Modified File'
 
 - script: |
