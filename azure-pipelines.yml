@@ -22,16 +22,16 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
+    echo "##vso[task.setvariable variable=previousCommit]$(Build.SourceVersion)"
+  displayName: 'Set Previous Commit'
+
+- script: |
     echo "Previous Commit: $(previousCommit)"
   displayName: 'Debug Previous Commit'
 
 - script: |
     git log --oneline
   displayName: 'Print Git Log'
-
-- script: |
-    echo "##vso[task.setvariable variable=previousCommit]$(Build.SourceVersion)"
-  displayName: 'Set Previous Commit'
 
 - script: |
     changes=$(git diff $(previousCommit)..HEAD)
