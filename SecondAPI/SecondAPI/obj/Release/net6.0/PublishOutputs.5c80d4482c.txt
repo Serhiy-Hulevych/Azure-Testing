@@ -1,0 +1,11 @@
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\SecondAPI.exe
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\SecondAPI.dll
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\SecondAPI.deps.json
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\SecondAPI.runtimeconfig.json
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\SecondAPI.pdb
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\hulevych.6\Desktop\Meu_Repo\Portfolio\SecondAPI\SecondAPI\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
