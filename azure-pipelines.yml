@@ -16,7 +16,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    lastCommit=git log -n 2 --format="%H" | tail -n 1
+    lastCommit=$(git log -n 2 --format="%H" | tail -n 1)
     echo "Teste: $lastCommit"
   displayName: 'Set Previous Commit'
 
