@@ -18,11 +18,8 @@ steps:
 
 
 - script: |
-    previousCommit=$(git log -n 2 --format="%H" | sed -n '1p')
-    echo Teste: $(Build.SourceVersion)
-    previousCommit=$(git rev-parse HEAD^)
-    echo "##vso[task.setvariable variable=previousCommit]$previousCommit"
-    echo Teste2: $(previousCommit)
+    currentCommit=$(git rev-parse HEAD)
+    previousCommit=$(git rev-list -n 2 --skip=1 $currentCommit)
     echo "##vso[task.setvariable variable=previousCommit]$previousCommit"
   displayName: 'Set Previous Commit'
 
