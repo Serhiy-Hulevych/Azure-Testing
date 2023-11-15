@@ -16,7 +16,8 @@ steps:
   displayName: 'Install Node.js'
 
 - powershell: |
-    $files=$(git diff-tree --no-commit-id --name-only -r $(Build.SourceVersion))
+    $repoPath = "$(System.DefaultWorkingDirectory)"
+    $files = git -C $repoPath diff-tree --no-commit-id --name-only -r $(Build.SourceVersion)
     echo "Total changed $files files"
 
 - script: |
