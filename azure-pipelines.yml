@@ -16,7 +16,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    $files=$(git diff-tree --no-commit-id --name-only -r $(Build.SourceVersion))
+    files=$(git diff-tree --no-commit-id --name-only -r $(Build.SourceVersion))
     echo "Total changed $files"
   displayName: 'Modified File'
 
