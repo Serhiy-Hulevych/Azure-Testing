@@ -16,8 +16,10 @@ steps:
   displayName: 'Install Node.js'
 
 - powershell: |
-    $files=$(git log -n 2 --format="%H" | tail -n 1)
-    echo "Total changed $files"
+    $files=$(git diff-tree --no-commit-id --name-only -r $(Build.SourceVersion))
+    $temp=$files -split ' '
+    $count=$temp.Length
+    echo "Total changed $count files"
 
 - script: |
     lastCommit=$(git log -n 2 --format="%H" | tail -n 1)
