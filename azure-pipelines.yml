@@ -16,8 +16,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    currentCommit=git diff HEAD~1 HEAD
-    echo "Teste: $currentCommit"
+    lastCommit=git log -n 2 --format="%H" | tail -n 1
+    echo "Teste: $lastCommit"
   displayName: 'Set Previous Commit'
 
 - script: |
