@@ -15,40 +15,19 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
-- task: PowerShell@2
-  displayName: Get GIT Commit-IDs before and after Push
-  inputs:
-    targetType: 'inline'
-    script: |
-      # print Information stream
-      $InformationPreference = "Continue"
-
-      $headers = @{ Authorization = "Bearer $env:SYSTEM_ACCESSTOKEN" }
-      $uri = "$env:SYSTEM_TEAMFOUNDATIONSERVERURI$env:SYSTEM_TEAMPROJECT/_apis/build/builds/$($env:BUILD_BUILDID)/changes?api-version=5.1"
-      $changes = Invoke-RestMethod -Method Get -Headers $headers -Uri $uri -Verbose
-
-      if ($changes.count -gt 0) {
-          $commit_id_before = $changes.value[$changes.count - 1].id
-          $commit_id_after = $changes.value[0].id
-
-          Write-Information "Commit ID before push: $commit_id_before"
-          Write-Information "Commit ID after push:  $commit_id_after"
-
-          Write-Host "##vso[task.setvariable variable=GIT_EVENT_BEFORE]$commit_id_before"
-          Write-Host "##vso[task.setvariable variable=GIT_EVENT_AFTER]$commit_id_after"
-      }
-      else {
-        Write-Warning "No changes found in Build $buildId"
-      }
-    pwsh: true
-  env:
-    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-
 - powershell: |
-    $files=$(git diff-tree --no-commit-id --name-only -r $(Build.SourceVersion))
-    $temp=$files -split ' '
-    $count=$temp.Length
-    echo "Total changed $files files"
+    $changes = Invoke-RestMethod -Method Get -Headers $headers "https://dev.azure.com/$organization/$project/_apis/build/builds/$buildId/changes?api-version=5.1" -verbose
+    $changedPaths = @()
+    if ($changes.count -gt 0) {
+        $commitId = $changes.value[$changes.value.length - 1].id
+        write-verbose "first change: $commitId" -Verbose
+
+        $commitId = $changes.value[$changes.value.length - 1].id
+        $head = $changes.value[0].id
+        
+        $changedPaths = git diff "$($commitId)~1" $head --name-only
+    }
+    echo "Total changed $changes"
 
 - script: |
     lastCommit=$(git log -n 2 --format="%H" | tail -n 1)
